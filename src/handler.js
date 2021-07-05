@@ -86,15 +86,15 @@ const getAllBooks = (request, h) => {
     bookResult = books.filter((book) => book.name.match(RegExp(name, 'i')));
   }
 
-  if (reading === 0) {
+  if (parseInt(reading, 2) === 0) {
     bookResult = books.filter((book) => book.reading === false);
-  } else if (reading === 1) {
+  } else if (parseInt(reading, 2) === 1) {
     bookResult = books.filter((book) => book.reading === true);
   }
 
-  if (finished === 0) {
+  if (parseInt(finished, 2) === 0) {
     bookResult = books.filter((book) => book.finished === false);
-  } else if (finished === 1) {
+  } else if (parseInt(finished, 2) === 1) {
     bookResult = books.filter((book) => book.finished === true);
   }
 
